@@ -2,9 +2,7 @@
 
 import Image from 'next/image';
 import type { VCardFormData } from '@/types/vcard';
-
 import DEFAULT_AVATAR from '@/constants/default-avatar';
-
 
 type Props = {
   formData: VCardFormData;
@@ -53,7 +51,7 @@ export default function PreviewCard({ formData }: Props) {
 
   return (
     <div className="w-full rounded-xl border-2 border-dashed border-gray-300 pt-6 space-y-4 bg-white">
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center space-y-3 h-[180px]">
         <div className="w-[121px] h-[121px] rounded-3xl overflow-hidden flex items-center justify-center">
           <Image
             src={avatarSrc}
@@ -63,11 +61,10 @@ export default function PreviewCard({ formData }: Props) {
             className="object-cover w-full h-full"
           />
         </div>
+        <h2 className="text-center text-lg font-semibold text-gray-800">
+          {displayName}
+        </h2>
       </div>
-
-      <h2 className="text-center text-lg font-semibold text-gray-800">
-        {displayName}
-      </h2>
 
       <div className="text-sm text-gray-700 rounded-md overflow-hidden">
         {details.map((item, index) => (
@@ -77,6 +74,8 @@ export default function PreviewCard({ formData }: Props) {
           </div>
         ))}
       </div>
+
+      <div className="h-[180px]"></div>
     </div>
   );
 }
