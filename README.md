@@ -2,7 +2,7 @@
 
 1. **Clone** this repository  
    ```bash
-   git clone <your‑fork‑url> vcard && cd vcard
+   git clone https://github.com/dimaq12/vcard && cd vcard
    ```
 
 2. **Build & run** everything with Docker Compose  
